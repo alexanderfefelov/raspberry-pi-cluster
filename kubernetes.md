@@ -95,7 +95,7 @@ $ sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
 $ sudo chown $(id --user):$(id --group) $HOME/.kube/config
 ```
 
-Run on all nodes:
+Run on all nodes (see above):
 
 ```
 $ sudo kubeadm join 192.168.1.74:6443 --token magb4r.atgo9lf1iluzp1tx --discovery-token-ca-cert-hash sha256:d77c0e09fb9f6b95b8622f457e19cd15c32b65e776d7196e51fae7fcc2c80681
@@ -173,6 +173,9 @@ Run on master:
 $ kubectl get all --all-namespaces
 ```
 
+Output:
+
+
 ```
 NAMESPACE     NAME                                 READY   STATUS    RESTARTS   AGE
 kube-system   pod/coredns-576cbf47c7-4zwrx         1/1     Running   0          109m
@@ -217,7 +220,7 @@ Run on master:
 $ kubectl get nodes
 ```
 
-Output
+Output:
 
 ```
 NAME     STATUS   ROLES    AGE    VERSION
@@ -230,5 +233,5 @@ node04   Ready    <none>   98m    v1.12.3
 
 ## References
 
-* [https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/)
+* [Creating a single master cluster with kubeadm](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/)
 * [Setup Kubernetes on a Raspberry Pi Cluster easily the official way!](https://blog.hypriot.com/post/setup-kubernetes-raspberry-pi-cluster/)
