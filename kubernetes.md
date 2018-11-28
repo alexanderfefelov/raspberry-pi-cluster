@@ -195,6 +195,23 @@ kube-system   kube-proxy-q49kt                 1/1     Running   0          88m
 kube-system   kube-scheduler-master            1/1     Running   0          90m
 ```
 
+Run on master:
+
+```
+$ kubectl get nodes
+```
+
+Output
+
+```
+NAME     STATUS   ROLES    AGE    VERSION
+master   Ready    master   100m   v1.12.3
+node01   Ready    <none>   98m    v1.12.3
+node02   Ready    <none>   98m    v1.12.3
+node03   Ready    <none>   98m    v1.12.3
+node04   Ready    <none>   98m    v1.12.3
+```
+
 ## References
 
 * [https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/)
