@@ -170,29 +170,45 @@ daemonset.extensions/kube-flannel-ds-s390x created
 Run on master:
 
 ```
-$ kubectl get pods --all-namespaces
+$ kubectl get all --all-namespaces
 ```
 
-Output:
-
 ```
-NAMESPACE     NAME                             READY   STATUS    RESTARTS   AGE
-kube-system   coredns-576cbf47c7-4zwrx         1/1     Running   0          90m
-kube-system   coredns-576cbf47c7-bdk24         1/1     Running   0          90m
-kube-system   etcd-master                      1/1     Running   0          89m
-kube-system   kube-apiserver-master            1/1     Running   1          89m
-kube-system   kube-controller-manager-master   1/1     Running   0          89m
-kube-system   kube-flannel-ds-arm-cv7x8        1/1     Running   0          56s
-kube-system   kube-flannel-ds-arm-gvlqg        1/1     Running   0          56s
-kube-system   kube-flannel-ds-arm-gxnkz        1/1     Running   0          56s
-kube-system   kube-flannel-ds-arm-kqnjr        1/1     Running   0          56s
-kube-system   kube-flannel-ds-arm-pwb5z        1/1     Running   0          56s
-kube-system   kube-proxy-9bplx                 1/1     Running   0          88m
-kube-system   kube-proxy-cn8z8                 1/1     Running   0          88m
-kube-system   kube-proxy-cwltf                 1/1     Running   0          88m
-kube-system   kube-proxy-ndjfh                 1/1     Running   0          90m
-kube-system   kube-proxy-q49kt                 1/1     Running   0          88m
-kube-system   kube-scheduler-master            1/1     Running   0          90m
+NAMESPACE     NAME                                 READY   STATUS    RESTARTS   AGE
+kube-system   pod/coredns-576cbf47c7-4zwrx         1/1     Running   0          109m
+kube-system   pod/coredns-576cbf47c7-bdk24         1/1     Running   0          109m
+kube-system   pod/etcd-master                      1/1     Running   0          109m
+kube-system   pod/kube-apiserver-master            1/1     Running   1          109m
+kube-system   pod/kube-controller-manager-master   1/1     Running   0          109m
+kube-system   pod/kube-flannel-ds-arm-cv7x8        1/1     Running   0          20m
+kube-system   pod/kube-flannel-ds-arm-gvlqg        1/1     Running   0          20m
+kube-system   pod/kube-flannel-ds-arm-gxnkz        1/1     Running   0          20m
+kube-system   pod/kube-flannel-ds-arm-kqnjr        1/1     Running   0          20m
+kube-system   pod/kube-flannel-ds-arm-pwb5z        1/1     Running   0          20m
+kube-system   pod/kube-proxy-9bplx                 1/1     Running   0          108m
+kube-system   pod/kube-proxy-cn8z8                 1/1     Running   0          108m
+kube-system   pod/kube-proxy-cwltf                 1/1     Running   0          108m
+kube-system   pod/kube-proxy-ndjfh                 1/1     Running   0          109m
+kube-system   pod/kube-proxy-q49kt                 1/1     Running   0          107m
+kube-system   pod/kube-scheduler-master            1/1     Running   0          109m
+
+NAMESPACE     NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)         AGE
+default       service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP         111m
+kube-system   service/kube-dns     ClusterIP   10.96.0.10   <none>        53/UDP,53/TCP   110m
+
+NAMESPACE     NAME                                     DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR                     AGE
+kube-system   daemonset.apps/kube-flannel-ds-amd64     0         0         0       0            0           beta.kubernetes.io/arch=amd64     20m
+kube-system   daemonset.apps/kube-flannel-ds-arm       5         5         5       5            5           beta.kubernetes.io/arch=arm       20m
+kube-system   daemonset.apps/kube-flannel-ds-arm64     0         0         0       0            0           beta.kubernetes.io/arch=arm64     20m
+kube-system   daemonset.apps/kube-flannel-ds-ppc64le   0         0         0       0            0           beta.kubernetes.io/arch=ppc64le   20m
+kube-system   daemonset.apps/kube-flannel-ds-s390x     0         0         0       0            0           beta.kubernetes.io/arch=s390x     20m
+kube-system   daemonset.apps/kube-proxy                5         5         5       5            5           <none>                            110m
+
+NAMESPACE     NAME                      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+kube-system   deployment.apps/coredns   2         2         2            2           110m
+
+NAMESPACE     NAME                                 DESIRED   CURRENT   READY   AGE
+kube-system   replicaset.apps/coredns-576cbf47c7   2         2         2       109m
 ```
 
 Run on master:
