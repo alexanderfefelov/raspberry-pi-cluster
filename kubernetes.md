@@ -1,5 +1,7 @@
 # Kubernetes
 
+## Install Kubernetes
+
 Run on all hosts:
 
 ```
@@ -212,6 +214,21 @@ kube-system   deployment.apps/coredns   2         2         2            2      
 
 NAMESPACE     NAME                                 DESIRED   CURRENT   READY   AGE
 kube-system   replicaset.apps/coredns-576cbf47c7   2         2         2       109m
+```
+
+Run on master:
+
+```
+$ kubectl cluster-info
+```
+
+Output:
+
+```
+Kubernetes master is running at https://192.168.1.74:6443
+KubeDNS is running at https://192.168.1.74:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 ```
 
 Run on master:

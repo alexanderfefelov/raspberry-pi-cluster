@@ -1,12 +1,9 @@
 # Environment
 
-Run on all hosts:
+[HypriotOS 1.9.0](https://blog.hypriot.com/downloads/):
 
-```
-$ sudo timedatectl set-timezone Europe/Moscow
-```
-
-[HypriotOS 1.9.0](https://blog.hypriot.com/downloads/)
+* SSH server enabled out of the box
+* Default credentials: `pirate` / `hypriot`
 
 Run on any host:
 
@@ -68,4 +65,10 @@ Server:
   Built:        Tue Apr 10 18:21:25 2018
   OS/Arch:      linux/arm
   Experimental: false
+```
+
+Run on all hosts:
+
+```
+$ sudo timedatectl set-timezone Europe/Moscow
 ```
