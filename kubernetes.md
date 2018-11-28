@@ -1,6 +1,6 @@
 # Kubernetes
 
-Run an all hosts:
+Run on all hosts:
 
 ```
 $ sudo su -
